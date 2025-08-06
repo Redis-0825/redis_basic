@@ -25,3 +25,10 @@ mset budi "Budi Nugro" cindy "Cindy Eka" Dian "Dian Permata" //multiple set key 
 keys * //show semua key value
 mget cindy Dian budi hasan //multiple get key
 
+//Expiration
+set hasan "M. Hasan"
+ttl hasan //Time To Leave : hasilnya akan -1 krn belum di set TTL
+expire hasan 15 //Set expired key hasan hanya 15 detik
+ttl hasan //Sebelum 15 detik hasilnya menunjukkan detik tersisa data ready
+ttl hasan //Setelah 15 detik hasilnya menunjukkan -2 krn sudah terhapus
+setex hasan 60 "M. Hasan" //Set expire langsung ketika buat key value
