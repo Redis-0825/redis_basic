@@ -44,3 +44,15 @@ incrby counter 3 //Incr set + 3 = 3
 decrby counter 5//Decr set - 5 = -2
 get counter //Saat ini valuenya -2
 
+//Flush -> delete keys
+select 0 //Gunakan db 0
+mget cindy Dian budi hasan //get all keys
+flushdb //Hapus semua keys from current db (0)
+mget cindy Dian budi hasan //Sudah terhapus
+set hasan "M. Hasan"
+select 1
+set hasan1 "M. Hasan 1"
+flushall //Hapus semua keys dari semua db
+keys * //Sudah terhapus
+select 0
+keys * //Sudah terhapus juga
