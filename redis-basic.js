@@ -32,3 +32,15 @@ expire hasan 15 //Set expired key hasan hanya 15 detik
 ttl hasan //Sebelum 15 detik hasilnya menunjukkan detik tersisa data ready
 ttl hasan //Setelah 15 detik hasilnya menunjukkan -2 krn sudah terhapus
 setex hasan 60 "M. Hasan" //Set expire langsung ketika buat key value
+
+//Increment & Decrement
+incr counter //jika belum ada key, maka default 0 dan incr ke 1
+incr counter //icr ke 2
+get counter //Saat ini valuenya 2
+decr counter //decr ke 1
+decr counter //decr ke 0
+get counter //Saat ini valuenya 0
+incrby counter 3 //Incr set + 3 = 3
+decrby counter 5//Decr set - 5 = -2
+get counter //Saat ini valuenya -2
+
