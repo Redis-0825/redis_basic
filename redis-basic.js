@@ -56,3 +56,11 @@ flushall //Hapus semua keys dari semua db
 keys * //Sudah terhapus
 select 0
 keys * //Sudah terhapus juga
+
+//Pipeline
+exit
+redis-cli -h localhost -p 6379 -n 0 --pipe < input-file.txt //Input banyak comand sekali running dalam file
+redis-cli -h localhost -p 6379
+select 0
+keys * //muncul semua keys tadi (senior, lead, manager)
+mget senior lead manager //Get data sesuai

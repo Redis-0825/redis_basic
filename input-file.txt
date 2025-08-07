@@ -1,0 +1,3 @@
+set senior "Hasan as Senior QA"
+set lead "Hasan as Lead QA"
+set manager "Hasan as Manager QA"
