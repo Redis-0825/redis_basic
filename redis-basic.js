@@ -64,3 +64,36 @@ redis-cli -h localhost -p 6379
 select 0
 keys * //muncul semua keys tadi (senior, lead, manager)
 mget senior lead manager //Get data sesuai
+
+//Transaction
+multi //start transaction
+set laptop "Macbook" //Queued, dalam antrian execution
+get laptop //Belum ada value, masih antri
+set hanphone "Iphone" //Queued
+set komputer "Mac Mini" //Queued
+exec //Semua akan dieksekusi disini
+mget laptop hanphone komputer //Sukses get semua value sesuai
+multi //start transaction lagi
+set satu "Satu"
+set dua "Dua"
+set tiga "Tiga"
+discard //Batalkan semua antria eksekusi
+mget satu dua tiga //Gagal get semua value
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
