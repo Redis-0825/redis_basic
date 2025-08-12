@@ -95,6 +95,10 @@ client list //Untuk melihat list client yang tersambung
 client id //Melihat id client saat ini
 client kill 127.0.0.1:60646 //Kill client by addres yang didapat dari client list
 
+//Protected mode
+redis-server config/redis.conf //Restart redis server setelah update bind ke ip kita 'bind 192.168.1.19'
+redis-cli -h 192.168.1.19 -p 6379 //Restart redis server menggunakan ip bind
+
 
 
 
