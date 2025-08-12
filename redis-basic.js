@@ -80,7 +80,10 @@ set tiga "Tiga"
 discard //Batalkan semua antria eksekusi
 mget satu dua tiga //Gagal get semua value
 
-
+//Monitor
+monitor //Running di sesi yang berbeda untuk melihat semua perintah valid user
+mget handphone laptop komputer //Perintah valid akan terecord di sesi monitor
+salah //Perintah tidak valid tidak terecord monitor
 
 
 
