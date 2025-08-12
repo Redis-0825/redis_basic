@@ -90,9 +90,10 @@ info //Melihat info server: os, memori, version dll
 config get port //Melihat info port 'config get (nama config)'
 config get databases //Melihat info database
 
-
-
-
+//Client connection
+client list //Untuk melihat list client yang tersambung
+client id //Melihat id client saat ini
+client kill 127.0.0.1:60646 //Kill client by addres yang didapat dari client list
 
 
 
