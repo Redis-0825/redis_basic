@@ -100,7 +100,16 @@ redis-server config/redis.conf //Restart redis server setelah update bind ke ip 
 redis-cli -h 172.21.105.163 -p 6379 //Restart redis server menggunakan ip bind
 select 0 //ketika menjalankan command akan 'Authentication required', karena saat ini protected mode yes
 
-
+//Security
+//Setelah menambahkan user auth di redis.conf, restart redis server dan reconnect redis client
+//ketika pertama kali connect maka akan menggunakan user default = hanya bisa tersambung saja
+select 0 //(error) NOAUTH Authentication required
+set test "test" //(error) NOAUTH Authentication required.
+auth hasan salah //invalid password auth
+auth hasan Password1234! //OK sudah dapat full akses
+select 0 //OK
+set test "test" //OK
+get test //OK "test"
 
 
 
