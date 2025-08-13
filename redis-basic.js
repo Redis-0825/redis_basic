@@ -111,7 +111,15 @@ select 0 //OK
 set test "test" //OK
 get test //OK "test"
 
-
+//Persistence
+//Update config save to db 'save 3600 1 300 100 60 500', and restart redis server
+set M "M."
+set Hasan "Hasan"
+save //save to db, pada redis server akan tertera message 'DB saved on disk', data di save di file dump.rdb
+//Reconnect redis-cli, reauth account full access
+mget M Hasan //data key value masih tersedia, meski sudah restart redis server
+//Jika file dump.rdb dihapus maka key juga terhapus
+//Selain itu juga bisa save dengan 'bgsave' untuk lakukan save asynchronous/di background
 
 
 
