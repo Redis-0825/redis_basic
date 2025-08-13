@@ -121,8 +121,6 @@ mget M Hasan //data key value masih tersedia, meski sudah restart redis server
 //Jika file dump.rdb dihapus maka key juga terhapus
 //Selain itu juga bisa save dengan 'bgsave' untuk lakukan save asynchronous/di background
 
-
-
-
-
-
+//Eviction (menghapus data lama, dan menerima data baru)
+//Berkaitan dengan max memory dan set expired data
+//https://redis.io/docs/reference/eviction/
